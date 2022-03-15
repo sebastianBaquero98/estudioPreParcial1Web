@@ -30,6 +30,7 @@ function cargarDatos(datos){
     tableA = document.getElementById('tableA');
     tbody = document.createElement('tbody');
     tbody.id = "table-body";
+    tbody.class = 'table-hover';
     //tbody = document.getElementById('table-body')
     datos.forEach(person => {
         console.log(person)
