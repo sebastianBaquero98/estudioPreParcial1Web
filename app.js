@@ -16,8 +16,12 @@ ejemploJSON = [{"last_name": "Zaws",
                 ]
 
 function cargarDatos(datos){
-    
-    tbody = document.getElementById('table-body')
+    tbody = document.getElementById('table-body');
+    tbody.remove();
+    tableA = document.getElementById('tableA');
+    tbody = document.createElement('tbody');
+    tbody.id = "table-body";
+    //tbody = document.getElementById('table-body')
     datos.forEach(person => {
         console.log(person)
         let row = document.createElement('tr');
@@ -44,6 +48,7 @@ function cargarDatos(datos){
     
         tbody.appendChild(row);
     })
+    tableA.appendChild(tbody);
 }
 
 
