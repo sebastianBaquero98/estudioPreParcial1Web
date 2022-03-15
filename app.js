@@ -15,6 +15,15 @@ ejemploJSON = [{"last_name": "Zaws",
                 "photo":"http://cummyimage.com/155x119.jpg/ff4444/ffffff"}
                 ]
 
+//form = document.getElementById('form-add');
+
+
+const addPerson = (event)=>{
+    event.preventDefault();
+    let person = {'last_name':document.getElementById('lastName').value,'first_name': document.getElementById('firstName').value, 'email': document.getElementById('email').value, 'photo': document.getElementById('photo').value};
+    ejemploJSON.push(person);
+    cargarDatos(ejemploJSON);
+}
 function cargarDatos(datos){
     tbody = document.getElementById('table-body');
     tbody.remove();
@@ -60,3 +69,7 @@ function sortColumn(columnName){
     );
     cargarDatos(ejemploJSON);
 }
+
+btnSub = document.getElementById('subBtn');
+
+btnSub.addEventListener('click', addPerson)
